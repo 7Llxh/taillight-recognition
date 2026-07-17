@@ -5,6 +5,8 @@ __pycache__/
 
 # IDE
 .idea/
+.vscode/
+.claude/
 
 # 大文件/数据/模型（不入 git，本地保留；可重训/重下）
 data/raw/

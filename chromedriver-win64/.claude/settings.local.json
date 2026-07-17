@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python -c \"import ast; ast.parse\\(open\\('detect_vehicle.py', encoding='utf-8'\\).read\\(\\)\\); print\\('语法检查通过'\\)\")",
-      "Bash(python -c \"import ast; ast.parse\\(open\\('detect_vehicle.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
-      "Bash(npx --version)"
-    ]
-  }
-}
