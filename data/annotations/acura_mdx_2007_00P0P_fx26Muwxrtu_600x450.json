@@ -1,0 +1,112 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\acura_mdx_2007\\00P0P_fx26Muwxrtu_600x450.jpg",
+  "model": "acura_mdx_2007",
+  "view": "front",
+  "vehicle_box": [
+    47,
+    81,
+    501,
+    396
+  ],
+  "parts": [
+    {
+      "label": "headlight",
+      "box": [
+        270,
+        210,
+        403,
+        258
+      ]
+    },
+    {
+      "label": "headlight",
+      "box": [
+        60,
+        204,
+        109,
+        251
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        436,
+        135,
+        492,
+        169
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        144,
+        146,
+        180,
+        166
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        166,
+        102,
+        422,
+        166
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        422,
+        90,
+        486,
+        174
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        397,
+        258,
+        460,
+        387
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        470,
+        205,
+        501,
+        283
+      ]
+    },
+    {
+      "label": "grille",
+      "box": [
+        105,
+        211,
+        271,
+        282
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        45,
+        270,
+        398,
+        372
+      ]
+    },
+    {
+      "label": "plate",
+      "box": [
+        132,
+        296,
+        204,
+        343
+      ]
+    }
+  ]
+}

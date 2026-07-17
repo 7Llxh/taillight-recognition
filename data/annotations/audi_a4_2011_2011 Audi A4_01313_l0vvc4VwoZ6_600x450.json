@@ -1,0 +1,76 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\audi_a4_2011\\2011 Audi A4_01313_l0vvc4VwoZ6_600x450.jpg",
+  "model": "audi_a4_2011",
+  "view": "front",
+  "vehicle_box": [
+    12,
+    105,
+    245,
+    313
+  ],
+  "parts": [
+    {
+      "label": "headlight",
+      "box": [
+        187,
+        208,
+        245,
+        258
+      ]
+    },
+    {
+      "label": "headlight",
+      "box": [
+        15,
+        209,
+        58,
+        256
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        209,
+        135,
+        238,
+        161
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        31,
+        140,
+        56,
+        161
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        55,
+        105,
+        209,
+        169
+      ]
+    },
+    {
+      "label": "grille",
+      "box": [
+        58,
+        231,
+        185,
+        304
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        9,
+        256,
+        244,
+        314
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\acura_mdx_2007\\01717_fnrpCcMt8cH_600x450.jpg",
+  "model": "acura_mdx_2007",
+  "view": "front",
+  "vehicle_box": [
+    125,
+    39,
+    475,
+    329
+  ],
+  "parts": [
+    {
+      "label": "headlight",
+      "box": [
+        376,
+        173,
+        458,
+        216
+      ]
+    },
+    {
+      "label": "headlight",
+      "box": [
+        141,
+        169,
+        222,
+        220
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        424,
+        103,
+        466,
+        134
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        129,
+        106,
+        172,
+        135
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        188,
+        58,
+        421,
+        139
+      ]
+    },
+    {
+      "label": "grille",
+      "box": [
+        214,
+        179,
+        379,
+        241
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        133,
+        245,
+        466,
+        308
+      ]
+    }
+  ]
+}

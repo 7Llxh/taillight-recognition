@@ -1,0 +1,67 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\acura_mdx_2007\\00H0H_bpv3dWhgveN_600x450.jpg",
+  "model": "acura_mdx_2007",
+  "view": "side",
+  "vehicle_box": [
+    5,
+    21,
+    279,
+    136
+  ],
+  "parts": [
+    {
+      "label": "taillight",
+      "box": [
+        266,
+        61,
+        282,
+        78
+      ]
+    },
+    {
+      "label": "headlight",
+      "box": [
+        4,
+        66,
+        26,
+        79
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        85,
+        51,
+        101,
+        67
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        93,
+        33,
+        254,
+        65
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        16,
+        87,
+        78,
+        140
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        203,
+        90,
+        258,
+        136
+      ]
+    }
+  ]
+}

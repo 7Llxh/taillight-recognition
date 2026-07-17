@@ -1,0 +1,12 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\acura_mdx_2007\\2007 Acura MDX_00r0r_77BumiWinSo_600x450.jpg",
+  "model": "acura_mdx_2007",
+  "view": "front",
+  "vehicle_box": [
+    4,
+    42,
+    599,
+    447
+  ],
+  "parts": []
+}

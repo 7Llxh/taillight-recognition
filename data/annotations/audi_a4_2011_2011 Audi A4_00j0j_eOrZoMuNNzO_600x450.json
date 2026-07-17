@@ -1,0 +1,94 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\audi_a4_2011\\2011 Audi A4_00j0j_eOrZoMuNNzO_600x450.jpg",
+  "model": "audi_a4_2011",
+  "view": "front",
+  "vehicle_box": [
+    11,
+    210,
+    501,
+    439
+  ],
+  "parts": [
+    {
+      "label": "headlight",
+      "box": [
+        304,
+        295,
+        423,
+        341
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        111,
+        239,
+        168,
+        269
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        161,
+        211,
+        330,
+        267
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        47,
+        224,
+        174,
+        270
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        195,
+        318,
+        301,
+        434
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        8,
+        299,
+        55,
+        375
+      ]
+    },
+    {
+      "label": "plate",
+      "box": [
+        445,
+        331,
+        495,
+        380
+      ]
+    },
+    {
+      "label": "grille",
+      "box": [
+        418,
+        294,
+        498,
+        341
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        324,
+        360,
+        497,
+        414
+      ]
+    }
+  ]
+}

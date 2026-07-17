@@ -1,0 +1,103 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\audi_a4_2011\\2011 audi a4 quattro_00A0A_ireI4DZ9Eq7_600x450.jpg",
+  "model": "audi_a4_2011",
+  "view": "rear",
+  "vehicle_box": [
+    54,
+    95,
+    597,
+    392
+  ],
+  "parts": [
+    {
+      "label": "taillight",
+      "box": [
+        370,
+        227,
+        514,
+        289
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        91,
+        141,
+        135,
+        174
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        302,
+        106,
+        518,
+        197
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        114,
+        103,
+        324,
+        210
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        226,
+        256,
+        332,
+        391
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        49,
+        188,
+        122,
+        276
+      ]
+    },
+    {
+      "label": "plate",
+      "box": [
+        504,
+        224,
+        574,
+        275
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        395,
+        291,
+        596,
+        386
+      ]
+    },
+    {
+      "label": "exhaust",
+      "box": [
+        420,
+        349,
+        488,
+        390
+      ]
+    },
+    {
+      "label": "taillight",
+      "box": [
+        563,
+        185,
+        596,
+        243
+      ]
+    }
+  ]
+}

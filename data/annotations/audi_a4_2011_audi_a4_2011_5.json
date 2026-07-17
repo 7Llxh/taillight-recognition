@@ -1,0 +1,58 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\audi_a4_2011\\audi_a4_2011_5.jpg",
+  "model": "audi_a4_2011",
+  "view": "rear",
+  "vehicle_box": [
+    20,
+    31,
+    260,
+    203
+  ],
+  "parts": [
+    {
+      "label": "taillight",
+      "box": [
+        192,
+        97,
+        261,
+        137
+      ]
+    },
+    {
+      "label": "taillight",
+      "box": [
+        19,
+        98,
+        93,
+        130
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        52,
+        37,
+        232,
+        85
+      ]
+    },
+    {
+      "label": "plate",
+      "box": [
+        113,
+        115,
+        171,
+        154
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        20,
+        147,
+        260,
+        204
+      ]
+    }
+  ]
+}

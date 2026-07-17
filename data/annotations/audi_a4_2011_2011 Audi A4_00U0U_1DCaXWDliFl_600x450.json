@@ -1,0 +1,103 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\audi_a4_2011\\2011 Audi A4_00U0U_1DCaXWDliFl_600x450.jpg",
+  "model": "audi_a4_2011",
+  "view": "rear",
+  "vehicle_box": [
+    104,
+    69,
+    514,
+    379
+  ],
+  "parts": [
+    {
+      "label": "taillight",
+      "box": [
+        376,
+        170,
+        498,
+        229
+      ]
+    },
+    {
+      "label": "taillight",
+      "box": [
+        116,
+        169,
+        229,
+        222
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        463,
+        128,
+        509,
+        160
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        142,
+        125,
+        166,
+        152
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        170,
+        84,
+        452,
+        156
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        443,
+        291,
+        512,
+        380
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        106,
+        287,
+        181,
+        376
+      ]
+    },
+    {
+      "label": "plate",
+      "box": [
+        257,
+        189,
+        345,
+        240
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        116,
+        248,
+        485,
+        335
+      ]
+    },
+    {
+      "label": "exhaust",
+      "box": [
+        155,
+        306,
+        204,
+        341
+      ]
+    }
+  ]
+}

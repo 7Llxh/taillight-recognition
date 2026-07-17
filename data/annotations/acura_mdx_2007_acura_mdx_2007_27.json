@@ -1,0 +1,76 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\acura_mdx_2007\\acura_mdx_2007_27.jpg",
+  "model": "acura_mdx_2007",
+  "view": "rear",
+  "vehicle_box": [
+    0,
+    17,
+    444,
+    328
+  ],
+  "parts": [
+    {
+      "label": "taillight",
+      "box": [
+        222,
+        115,
+        363,
+        174
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        236,
+        23,
+        433,
+        112
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        2,
+        34,
+        221,
+        117
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        101,
+        193,
+        199,
+        322
+      ]
+    },
+    {
+      "label": "plate",
+      "box": [
+        380,
+        134,
+        418,
+        172
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        297,
+        197,
+        441,
+        301
+      ]
+    },
+    {
+      "label": "exhaust",
+      "box": [
+        307,
+        276,
+        358,
+        300
+      ]
+    }
+  ]
+}

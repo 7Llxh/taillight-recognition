@@ -1,0 +1,40 @@
+# carident 环境 - 汽车尾灯车型识别系统
+# Python 3.12.x | conda env: carident | GPU: RTX 5060 (Blackwell, 需 cu128)
+#
+# 创建环境:
+#   conda create -n carident python=3.12 -y
+#   conda activate carident
+#
+# === GPU torch 安装要点(RTX 5060 Blackwell sm_120) ===
+# 必须用 cu128 版;cu121/cu124 会报 "no kernel image is available"。
+# download.pytorch.org 官方 index 在国内被 SSL 间歇拦截(WRONG_VERSION_NUMBER),
+# 改用阿里云 pytorch-wheels 镜像直装单个 wheel(绕过 index 页):
+#   pip install \
+#     https://mirrors.aliyun.com/pytorch-wheels/cu128/torch-2.11.0+cu128-cp312-cp312-win_amd64.whl \
+#     https://mirrors.aliyun.com/pytorch-wheels/cu128/torchvision-0.26.0+cu128-cp312-cp312-win_amd64.whl
+# 单连接下载约 0.45MB/s 被限速,用多线程(aria2 -x16 或 Python 分块)可达 ~7MB/s。
+# conda/pip 镜像走清华(.condarc + pip.ini 见用户目录)。
+
+# === 深度学习 / 检测 ===
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+ultralytics==8.4.96
+
+# === 图像处理 ===
+opencv-python==5.0.0.93
+numpy==2.5.1
+Pillow==12.3.0
+
+# === 数据 / 科学计算 ===
+pandas==3.0.3
+scipy==1.18.0
+scikit-learn==1.9.0
+tqdm==4.68.4
+
+# === 特征库 / 度量学习 (M4 特征网络阶段) ===
+faiss-cpu==1.14.3
+pytorch-metric-learning==2.9.0
+
+# === 数据采集 (爬虫 AutoInfoScraper) ===
+requests==2.34.2
+selenium==4.46.0

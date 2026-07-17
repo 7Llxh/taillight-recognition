@@ -1,0 +1,28 @@
+[
+  {
+    "box": [
+      1,
+      0,
+      520,
+      315
+    ],
+    "view": "rear",
+    "lit": false,
+    "top1": "buick_century_2000",
+    "confidence": 0.556,
+    "topk": [
+      {
+        "model": "buick_century_2000",
+        "sim": 0.556
+      },
+      {
+        "model": "acura_mdx_2007",
+        "sim": 0.551
+      },
+      {
+        "model": "acura_mdx_2007",
+        "sim": 0.527
+      }
+    ]
+  }
+]

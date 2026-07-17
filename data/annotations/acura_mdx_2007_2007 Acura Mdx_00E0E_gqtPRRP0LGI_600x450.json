@@ -1,0 +1,85 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\acura_mdx_2007\\2007 Acura Mdx_00E0E_gqtPRRP0LGI_600x450.jpg",
+  "model": "acura_mdx_2007",
+  "view": "front",
+  "vehicle_box": [
+    32,
+    7,
+    531,
+    310
+  ],
+  "parts": [
+    {
+      "label": "headlight",
+      "box": [
+        96,
+        147,
+        216,
+        186
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        337,
+        76,
+        391,
+        106
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        339,
+        27,
+        492,
+        96
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        172,
+        27,
+        346,
+        98
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        231,
+        190,
+        338,
+        302
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        474,
+        119,
+        523,
+        205
+      ]
+    },
+    {
+      "label": "grille",
+      "box": [
+        35,
+        152,
+        103,
+        205
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        34,
+        212,
+        190,
+        278
+      ]
+    }
+  ]
+}

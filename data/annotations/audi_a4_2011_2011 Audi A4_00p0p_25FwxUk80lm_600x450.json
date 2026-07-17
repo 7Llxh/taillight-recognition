@@ -1,0 +1,85 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\audi_a4_2011\\2011 Audi A4_00p0p_25FwxUk80lm_600x450.jpg",
+  "model": "audi_a4_2011",
+  "view": "front",
+  "vehicle_box": [
+    66,
+    44,
+    526,
+    282
+  ],
+  "parts": [
+    {
+      "label": "headlight",
+      "box": [
+        128,
+        179,
+        221,
+        218
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        350,
+        96,
+        402,
+        127
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        353,
+        52,
+        492,
+        119
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        227,
+        47,
+        360,
+        128
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        242,
+        182,
+        317,
+        275
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        476,
+        121,
+        523,
+        191
+      ]
+    },
+    {
+      "label": "grille",
+      "box": [
+        61,
+        163,
+        123,
+        223
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        65,
+        212,
+        218,
+        272
+      ]
+    }
+  ]
+}

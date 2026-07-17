@@ -1,0 +1,58 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\audi_a4_2011\\2011 Audi A4_00N0N_4X7TFII1CeJ_600x450.jpg",
+  "model": "audi_a4_2011",
+  "view": "side",
+  "vehicle_box": [
+    24,
+    154,
+    575,
+    339
+  ],
+  "parts": [
+    {
+      "label": "taillight",
+      "box": [
+        537,
+        208,
+        573,
+        248
+      ]
+    },
+    {
+      "label": "headlight",
+      "box": [
+        29,
+        234,
+        55,
+        253
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        185,
+        163,
+        480,
+        214
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        408,
+        251,
+        506,
+        335
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        65,
+        248,
+        154,
+        324
+      ]
+    }
+  ]
+}

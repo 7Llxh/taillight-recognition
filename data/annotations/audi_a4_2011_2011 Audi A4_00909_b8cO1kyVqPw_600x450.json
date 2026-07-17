@@ -1,0 +1,67 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\audi_a4_2011\\2011 Audi A4_00909_b8cO1kyVqPw_600x450.jpg",
+  "model": "audi_a4_2011",
+  "view": "side",
+  "vehicle_box": [
+    28,
+    133,
+    585,
+    323
+  ],
+  "parts": [
+    {
+      "label": "taillight",
+      "box": [
+        30,
+        188,
+        60,
+        214
+      ]
+    },
+    {
+      "label": "headlight",
+      "box": [
+        545,
+        225,
+        586,
+        253
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        360,
+        177,
+        392,
+        201
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        120,
+        140,
+        410,
+        202
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        449,
+        239,
+        537,
+        324
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        88,
+        231,
+        180,
+        313
+      ]
+    }
+  ]
+}

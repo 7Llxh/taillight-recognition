@@ -1,0 +1,76 @@
+{
+  "image": "e:\\车辆识别\\-\\data\\raw\\acura_mdx_2007\\00i0i_1598tvCkbbc_600x450.jpg",
+  "model": "acura_mdx_2007",
+  "view": "side",
+  "vehicle_box": [
+    23,
+    33,
+    560,
+    328
+  ],
+  "parts": [
+    {
+      "label": "headlight",
+      "box": [
+        40,
+        165,
+        118,
+        201
+      ]
+    },
+    {
+      "label": "mirror",
+      "box": [
+        280,
+        103,
+        326,
+        130
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        167,
+        51,
+        310,
+        122
+      ]
+    },
+    {
+      "label": "window",
+      "box": [
+        283,
+        54,
+        526,
+        122
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        142,
+        210,
+        252,
+        330
+      ]
+    },
+    {
+      "label": "wheel",
+      "box": [
+        475,
+        163,
+        539,
+        229
+      ]
+    },
+    {
+      "label": "bumper",
+      "box": [
+        15,
+        212,
+        78,
+        264
+      ]
+    }
+  ]
+}

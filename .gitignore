@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.idea/
+
+# 大文件/数据/模型（不入 git，本地保留；可重训/重下）
+data/raw/
+data/*_dataset/
+data/features/
+runs/
+weights/
+
+# 二进制大文件（权重/可执行）
+*.pt
+*.exe
+
+# 测试输出（识别/检测产出）
+tests/*_recognize/
+tests/*_result/
+*_recognize/
+*_result/
