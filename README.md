@@ -71,14 +71,14 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 ├── recognize.py              # 识别程序(双路径 + 可视化)
 ├── build_all.py              # 一键训练+建库
 ├── check_taillight_detection.py  # 检查尾灯漏检 + 产标注队列
-├── visualize_parts.py        # 部件检测可视化(画9类部件框,看准确度)
+├── visualize_parts.py        # 部件检测可视化(画8类部件框,看准确度)
 ├── config.py                 # VMMRdb 配置(数据路径/阈值)
 ├── survey_vmmr.py            # 扫 VMMRdb 归并系列 + 剔除稀疏
 ├── requirements.txt
 ├── 需求分析.md / 原理.md / *-技术设计.md
 ├── docs/实施计划/            # 实施计划文档
 ├── data/
-│   ├── raw/{车型}/           # 原始图(当前 5 车型)
+│   ├── raw/{车型}/           # 原始图(VMMRdb 全量 9170 车型目录)
 │   ├── annotations/          # 标注 JSON
 │   ├── annotate_queue.json   # 标注增强队列(check 产,gitignore)
 │   ├── vmmr_series.json      # VMMRdb 系列清单(survey 产,gitignore)
@@ -194,7 +194,7 @@ python recognize.py <图片路径>
 
 ## 数据局限
 
-- 当前仅 **5 个车型**(data/raw),属小规模流程验证(设计 10-20 验证、50-100 正式)。
+- data/raw 现含 VMMRdb 全量(9170 车型目录),特征库已用 VMMRdb 50 系列子集验证(见 [docs/实施计划/](docs/实施计划/))。
 - 部件检测器漏检:buick/cadillac 尾灯样本少(buick 5、cadillac 2),**不是 rear 图少**,是部件检测器只训练了 acura+audi、在这两车型上漏检尾灯(check 显示 buick 58/62、cadillac 43/45 张 rear 图无尾灯),需补标注+重训部件检测器。
 - 库外图置信度低(合理,不匹配)。
 
@@ -212,7 +212,7 @@ python recognize.py <图片路径>
 - [朝向识别-技术设计.md](docs/朝向识别-技术设计.md)
 - [特征提取网络-技术设计.md](docs/特征提取网络-技术设计.md)
 - [交互式标注工具-技术设计.md](docs/交互式标注工具-技术设计.md)
-- [部件识别-技术设计.md](docs/部件识别-技术设计.md) - 9 类部件检测器（taillight mAP50=0.99）
+- [部件识别-技术设计.md](docs/部件识别-技术设计.md) - 8 类部件检测器（taillight mAP50=0.99）
 - [尾灯定位-技术设计.md](docs/尾灯定位-技术设计.md) - 部件检测器定位尾灯 + 亮灭判定
 - [识别程序-技术设计.md](docs/识别程序-技术设计.md) - 双路径融合 + 可视化（recognize.py）
 - [数据标注规范.md](docs/数据标注规范.md) - 部件类别/朝向/数据组织/划分
