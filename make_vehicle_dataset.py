@@ -23,7 +23,7 @@ from tqdm import tqdm
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from config import VMMRDB_DIR, SERIES_FILE, SUBSET_MIN_IMGS
+from config import RAW_DIR, SERIES_FILE, SUBSET_MIN_IMGS
 from detect_vehicle import _get_model, MODEL_PATH, _filter_vehicle_boxes, crop_and_normalize
 from orientation import detect_orientation
 
@@ -88,7 +88,7 @@ def main():
             paths = paths[:args.max_per_series]
         crops = []  # [(crop, year)]
         for rel in paths:
-            p = os.path.join(VMMRDB_DIR, rel)
+            p = os.path.join(RAW_DIR, rel)
             img = imread_unicode(p)
             if img is None:
                 continue

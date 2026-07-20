@@ -14,20 +14,20 @@ from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from config import VMMRDB_DIR, MIN_IMGS_PER_SERIES, SUBSET_MIN_IMGS, SERIES_FILE
+from config import RAW_DIR, MIN_IMGS_PER_SERIES, SUBSET_MIN_IMGS, SERIES_FILE
 
 EXTS = (".jpg", ".jpeg", ".png", ".webp")
 
 
 def survey():
-    if not os.path.isdir(VMMRDB_DIR):
-        print(f"VMMRdb 目录不存在: {VMMRDB_DIR}")
+    if not os.path.isdir(RAW_DIR):
+        print(f"VMMRdb 目录不存在: {RAW_DIR}")
         return
 
     mm = defaultdict(lambda: {"years": set(), "img_paths": [], "img_count": 0})
     ndirs = 0
-    for d in os.listdir(VMMRDB_DIR):
-        p = os.path.join(VMMRDB_DIR, d)
+    for d in os.listdir(RAW_DIR):
+        p = os.path.join(RAW_DIR, d)
         if not os.path.isdir(p):
             continue
         ndirs += 1
@@ -38,7 +38,7 @@ def survey():
             continue
         entry = mm[make_model]
         entry["years"].add(year)
-        entry["img_paths"].extend(os.path.join(d, f) for f in imgs)  # 相对 VMMRDB_DIR
+        entry["img_paths"].extend(os.path.join(d, f) for f in imgs)  # 相对 RAW_DIR
         entry["img_count"] += len(imgs)
 
     # 剔除 < MIN_IMGS_PER_SERIES
@@ -57,7 +57,7 @@ def survey():
     with open(SERIES_FILE, "w", encoding="utf-8") as f:
         json.dump(kept, f, ensure_ascii=False, indent=2)
 
-    print(f"VMMRdb: {VMMRDB_DIR}")
+    print(f"VMMRdb: {RAW_DIR}")
     print(f"make_model_year 目录: {ndirs}")
     print(f"归并系列(make_model): {len(mm)}")
     print(f"剔除 <{MIN_IMGS_PER_SERIES} 图: {len(dropped)} 系列")
