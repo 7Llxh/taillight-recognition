@@ -51,6 +51,15 @@ def _filter_vehicle_boxes(boxes, img_h, img_w):
     return kept
 
 
+def _pick_main_vehicle(boxes, img_h, img_w):
+    """过滤后取面积最大的车辆框作为主车（近车通常最大）。
+    多车场景聚焦主车，避免远处车辆干扰漏检判定。返回单个 box 或 None。"""
+    kept = _filter_vehicle_boxes(boxes, img_h, img_w)
+    if not kept:
+        return None
+    return max(kept, key=lambda b: (b.xyxy[0][2] - b.xyxy[0][0]) * (b.xyxy[0][3] - b.xyxy[0][1]))
+
+
 def detect_vehicle_full(image_path, conf=0.4):
     """YOLOv8 检测车辆（yolov8s + 后处理过滤误检）"""
     model = _get_model(MODEL_PATH)

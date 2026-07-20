@@ -57,11 +57,12 @@ def scan_images():
 
 
 def detect(path):
-    """跑车辆检测，返回车辆框（朝向人工标）。"""
+    """跑车辆检测，返回主车框（面积最大，近车优先；朝向人工标）。"""
     regions, img = detect_vehicle_full(path)
     if not regions:
         return {"vehicle_box": None}
-    x1, y1, x2, y2 = regions[0]["box"]
+    main = max(regions, key=lambda r: (r["box"][2] - r["box"][0]) * (r["box"][3] - r["box"][1]))
+    x1, y1, x2, y2 = main["box"]
     return {"vehicle_box": [x1, y1, x2, y2]}
 
 

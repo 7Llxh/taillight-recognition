@@ -21,7 +21,7 @@ import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from detect_vehicle import _get_model, MODEL_PATH, _filter_vehicle_boxes, detect_taillights
+from detect_vehicle import _get_model, MODEL_PATH, _pick_main_vehicle, detect_taillights
 from orientation import detect_orientation
 
 RAW = os.path.join(HERE, "data", "raw")
@@ -45,23 +45,25 @@ def check_model(model_dir):
             continue
         h, w = img.shape[:2]
         res = _get_model(MODEL_PATH)(img, classes=[2, 5, 7], conf=0.4)[0]
-        for box in _filter_vehicle_boxes(res.boxes, h, w):
-            x1, y1, x2, y2 = box.xyxy[0].int().tolist()
-            vc = img[y1:y2, x1:x2]
-            view = detect_orientation(vc)["view"]
-            views[view] = views.get(view, 0) + 1
-            if view == "rear":
-                tls = detect_taillights(vc)
-                if not tls:
-                    rear_no_tail += 1
-                    queue.append({
-                        "path": os.path.relpath(p, HERE).replace("\\", "/"),
-                        "model": model,
-                        "view": "rear",
-                        "vehicle_box": [x1, y1, x2, y2],
-                        "reason": "rear无尾灯",
-                    })
-                rear_tail += len(tls)
+        box = _pick_main_vehicle(res.boxes, h, w)
+        if box is None:
+            continue
+        x1, y1, x2, y2 = box.xyxy[0].int().tolist()
+        vc = img[y1:y2, x1:x2]
+        view = detect_orientation(vc)["view"]
+        views[view] = views.get(view, 0) + 1
+        if view == "rear":
+            tls = detect_taillights(vc)
+            if not tls:
+                rear_no_tail += 1
+                queue.append({
+                    "path": os.path.relpath(p, HERE).replace("\\", "/"),
+                    "model": model,
+                    "view": "rear",
+                    "vehicle_box": [x1, y1, x2, y2],
+                    "reason": "rear无尾灯",
+                })
+            rear_tail += len(tls)
     rear = views["rear"]
     avg = rear_tail / rear if rear else 0
     flag = ""
