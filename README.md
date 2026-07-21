@@ -156,14 +156,14 @@ python check_taillight_detection.py 新车型名   # 只查新车型（也可不
 
 check 同时把漏检图（rear 无尾灯）写入 `data/annotate_queue.json`，供标注工具按 `n` 逐张跳转补标。
 
-看输出「平均尾灯/rear图」（应 ≈2，每张车尾图左右各一尾灯）：
+看输出「0尾灯/rear图 比例」（1尾灯=后侧方单侧正常，2+尾灯=正后双侧正常，0尾灯=漏检）：
 
-| 平均尾灯/rear图 | 含义 | 操作 |
+| 0尾灯/rear图比例 | 含义 | 操作 |
 |---|---|---|
-| ≈2 | 部件检测器正常 | `python build_all.py --only-embedder`（重训特征网络+建库） |
-| <1.5 或大量rear图无尾灯 | 部件检测器**漏检**（尾灯形状没见过） | 标注部件框 + `python build_all.py --skip-orientation`（重训部件+特征网络+建库） |
+| 低（多数 1~2 灯） | 部件检测器正常 | `python build_all.py --only-embedder`（重训特征网络+建库） |
+| 高（>30% 0尾灯） | 部件检测器**漏检**（尾灯形状没见过） | 标注部件框 + `python build_all.py --skip-orientation`（重训部件+特征网络+建库） |
 
-> 标注：`python annotate_tool.py`，按 `n` 跳到 check 产的漏检图队列，画尾灯框保存自动出队（每车型 20-30 张 rear 图）。重训后再跑 check 验证平均升到 ~2。
+> 标注：`python annotate_tool.py`，按 `n` 跳到 check 产的漏检图队列，画尾灯框保存自动出队（每车型 20-30 张 rear 图）。重训后再跑 check 验证 0尾灯比例下降。
 > 判读依据：尾灯少但 rear 图也少 = 数据少（补车尾图）；rear 图多但尾灯少 = 漏检（补标注+重训部件）。
 
 ### 5. 识别
