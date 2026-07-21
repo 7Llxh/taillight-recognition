@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """训练 YOLOv8s 部件检测器（8 类部件）。
 
-用法（daily 环境）:
+用法（carident 环境）:
     python train_parts.py
 
 需先:
@@ -12,10 +12,10 @@
 GPU 说明（RTX 5060 为 Blackwell 架构 sm_120，必须用 cu128，装 cu121/cu124 会报
 "no kernel image is available"）:
     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
-若官方源拉不动，用阿里云镜像直装指定 wheel（cp313 = daily 环境 Python 3.13）:
+若官方源拉不动，用阿里云镜像直装指定 wheel（cp312 = carident 环境 Python 3.12）:
     pip install \
-      https://mirrors.aliyun.com/pytorch-wheels/cu128/torch-2.11.0+cu128-cp313-cp313-win_amd64.whl \
-      https://mirrors.aliyun.com/pytorch-wheels/cu128/torchvision-0.26.0+cu128-cp313-cp313-win_amd64.whl \
+      https://mirrors.aliyun.com/pytorch-wheels/cu128/torch-2.11.0+cu128-cp312-cp312-win_amd64.whl \
+      https://mirrors.aliyun.com/pytorch-wheels/cu128/torchvision-0.26.0+cu128-cp312-cp312-win_amd64.whl \
       -i https://mirrors.aliyun.com/pypi/simple/
 验证: python -c "import torch; print(torch.cuda.is_available())"  # 应为 True
 """
