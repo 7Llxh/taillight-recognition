@@ -11,6 +11,7 @@
     python check_taillight_detection.py              # 检查所有车型
     python check_taillight_detection.py 新车型名      # 只检查某车型
 """
+import argparse
 import glob
 import json
 import os
@@ -44,7 +45,7 @@ def check_model(model_dir):
         if img is None:
             continue
         h, w = img.shape[:2]
-        res = _get_model(MODEL_PATH)(img, classes=[2, 5, 7], conf=0.4)[0]
+        res = _get_model(MODEL_PATH)(img, classes=[2, 5, 7], conf=0.4, verbose=False)[0]
         box = _pick_main_vehicle(res.boxes, h, w)
         if box is None:
             continue
@@ -80,12 +81,26 @@ def check_model(model_dir):
 
 
 def main():
-    model_filter = sys.argv[1] if len(sys.argv) > 1 else None
-    dirs = sorted(d for d in glob.glob(os.path.join(RAW, "*")) if os.path.isdir(d))
-    if model_filter:
-        dirs = [d for d in dirs if os.path.basename(d) == model_filter]
+    ap = argparse.ArgumentParser(description="检查部件检测器在各车型的尾灯检测")
+    ap.add_argument("model", nargs="?", default=None, help="只检查某车型（data/raw 下目录名）")
+    ap.add_argument("--limit", type=int, default=None,
+                    help="只检查图片最多的 N 系列（top N make_model，从 vmmr_series.json 取）")
+    args = ap.parse_args()
+
+    if args.limit:
+        series = json.load(open(os.path.join(HERE, "data", "vmmr_series.json"), encoding="utf-8"))
+        top = [m for m, _ in sorted(series.items(), key=lambda kv: kv[1]["img_count"], reverse=True)[:args.limit]]
+        dirs = []
+        for m in top:
+            dirs += sorted(glob.glob(os.path.join(RAW, m + "_*")))
+        dirs = [d for d in dirs if os.path.isdir(d)]
+        print(f"--limit {args.limit}: top {len(top)} 系列, {len(dirs)} 个年款目录")
+    else:
+        dirs = sorted(d for d in glob.glob(os.path.join(RAW, "*")) if os.path.isdir(d))
+        if args.model:
+            dirs = [d for d in dirs if os.path.basename(d) == args.model]
     if not dirs:
-        print("未找到车型目录:", model_filter or RAW)
+        print("未找到车型目录:", args.model or RAW)
         return
     print(f"检查 {len(dirs)} 个车型（跑车辆+朝向+部件检测，稍等）...\n")
     all_queue = []
