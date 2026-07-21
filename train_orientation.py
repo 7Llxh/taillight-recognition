@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """训练 YOLOv8n-cls 朝向分类器（front/rear/side 三分类）。
 
-用法（daily 环境）:
+用法（carident 环境）:
     python train_orientation.py
 
 需先:
