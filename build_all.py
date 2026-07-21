@@ -11,6 +11,9 @@
     # 加新车型时（朝向/部件检测器通用，可跳过；只重训特征网络 + 重建库）
     python build_all.py --only-embedder
 
+    # 子集验证特征网络（快速跑通：跳过朝向/部件，make_* 取图片最多的 50 系列每 30 图）
+    python build_all.py --only-embedder --limit 50 --max-per-series 30
+
     # 自定义跳过某组
     python build_all.py --skip-orientation --skip-parts
 
@@ -57,6 +60,10 @@ def main():
     ap.add_argument("--skip-library", action="store_true", help="跳过特征库构建")
     ap.add_argument("--only-embedder", action="store_true",
                     help="只重训特征网络+建库（加新车型常用，等价于 --skip-orientation --skip-parts）")
+    ap.add_argument("--limit", type=int, default=None,
+                    help="子集验证：make_taillight/vehicle_dataset 只取图片最多的 N 系列")
+    ap.add_argument("--max-per-series", type=int, default=None,
+                    help="子集验证：每系列最多 N 图（配合 --limit）")
     args = ap.parse_args()
 
     skip = set()
@@ -79,7 +86,14 @@ def main():
         if group in skip:
             print(f"[跳过] {name}")
             continue
-        run(name, script, sargs)
+        # 子集参数传给 make_taillight/vehicle_dataset
+        extra = []
+        if script in ("make_taillight_dataset.py", "make_vehicle_dataset.py"):
+            if args.limit:
+                extra += ["--limit", str(args.limit)]
+            if args.max_per_series:
+                extra += ["--max-per-series", str(args.max_per_series)]
+        run(name, script, sargs + extra)
 
     print("\n全部完成 ✅  现在可识别: python recognize.py <图片>")
 
