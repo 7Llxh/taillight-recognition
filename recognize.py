@@ -120,6 +120,15 @@ def recognize(image_path):
                 results.append({"box": [x1, y1, x2, y2], "view": view, "result": "未检测到尾灯"})
                 _draw(result_img, (x1, y1, x2, y2), "无尾灯", 0, view, (255, 255, 0))
                 continue
+            # 画所有尾灯框(映射回原图:红=亮灯,绿=灭灯)
+            for t in tls:
+                ttx1, tty1, ttx2, tty2 = t["box"]
+                ttc = vcrop[tty1:tty2, ttx1:ttx2]
+                if ttc.size == 0:
+                    continue
+                t_lit, _ = _judge_lit(ttc)
+                tcolor = (0, 0, 255) if t_lit else (0, 255, 0)
+                cv2.rectangle(result_img, (x1+ttx1, y1+tty1), (x1+ttx2, y1+tty2), tcolor, 2)
             tl = max(tls, key=lambda t: t["conf"])
             tx1, ty1, tx2, ty2 = tl["box"]
             tc = vcrop[ty1:ty2, tx1:tx2]
