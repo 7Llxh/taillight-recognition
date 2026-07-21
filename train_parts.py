@@ -44,14 +44,14 @@ def main():
         data=DATA,
         epochs=50,
         imgsz=640,
-        batch=16,
+        batch=8,   # 临时降（numpy 内存碎片），跑通后调回 16
         device=device,
         workers=8,
         project=os.path.join(HERE, "runs", "detect"),
         name="parts_v2",          # exist_ok 直接覆盖 parts_v2，供 detect_vehicle 用
         exist_ok=True,
         # 小样本增强(103 图)：mixup 正则、轻微旋转、末段关 mosaic 提精度
-        mixup=0.15,
+        mixup=0.0,   # 临时关 mixup（float64 双图触发 numpy._ArrayMemoryError），跑通后调回 0.15
         degrees=5.0,
         close_mosaic=10,
     )
